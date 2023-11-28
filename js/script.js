@@ -1,5 +1,5 @@
 // Bed - Change colours
-var myModels = ["/models/bed-wood.glb", "/models/bed-white.glb", "/models/bed-black.glb"]
+var myModels = ["./models/bed-wood.glb", "./models/bed-white.glb", "./models/bed-black.glb"]
 var counter = 0;
 document.getElementById("change-bed").addEventListener("click", function() {
     counter++;
