@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 - Stage 2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#bed-section">Bed</a>
+            <a href="#chair-section">Chair</a>
+            <a href="#desk-section">Desk</a>
+            <a href="#inspiration-section">Inspiration</a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="images/hero-img.png" alt="Hero Image">
+        <div class="hero-text">
+            <h1>FURNICRAFT</h1>
+            <p>Crafting Comfort, Shaping Style</p>
+        </div>
+    </div>
+
+    <!-- Product section -->
+    <!-- Bed -->
+    <section id="bed-section">
+        <div class="product-info">
+            <div class="product-title">
+                <h2>Bed</h2>
+            </div>
+            <div class="product-description">
+                <p>Our beds redefine comfort <br>with a touch of luxury.</p>
+            </div>
+        </div>
+        <model-viewer id="bed" src="./models/bed-wood.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="./images/bed-wood.webp" shadow-intensity="1" camera-orbit="0deg 75deg 5.405m" field-of-view="22.22deg">
+            <button id="change-bed" class="Hotspot" slot="hotspot-1" data-position="0.01085693222969765m 0.3436632677019572m 0.988541493112017m" data-normal="0m 1.3435886108395827e-7m 0.999999999999991m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Click to change colour</div>
+            </button>
+        </model-viewer>
+    </section>
+
+    <!-- Chair -->
+    <section id="chair-section">
+        <div class="product-info">
+            <div class="product-title">
+                <h2>Chair</h2>
+            </div>
+            <div class="product-description">
+                <p>Explore comfort with a touch of <br>chic in every chair.</p>
+            </div>
+        </div>
+        <model-viewer id="chair" src="./models/chair-wood.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./images/chair-wood.webp" shadow-intensity="1" exposure="1.11" auto-rotate camera-orbit="180deg 70.71deg 4.5m" field-of-view="30deg"> 
+            <button slot="hotspot-dot+X-Y+Z" class="dot" data-position="1 -1 1" data-normal="1 0 0"></button>
+            <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
+            <button slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
+            <button slot="hotspot-dim+X-Z" class="dim" data-position="1 0 -1" data-normal="1 0 0"></button>
+            <button slot="hotspot-dot+X+Y-Z" class="dot" data-position="1 1 -1" data-normal="0 1 0"></button>
+            <button slot="hotspot-dim+Y-Z" class="dim" data-position="0 -1 -1" data-normal="0 1 0"></button>
+            <button slot="hotspot-dot-X+Y-Z" class="dot" data-position="-1 1 -1" data-normal="0 1 0"></button>
+            <button slot="hotspot-dim-X-Z" class="dim" data-position="-1 0 -1" data-normal="-1 0 0"></button>
+            <button slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
+            <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
+            <button slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
+            <svg id="dimLines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="dimensionLineContainer">
+                <line class="dimensionLine"></line>
+                <line class="dimensionLine"></line>
+                <line class="dimensionLine"></line>
+                <line class="dimensionLine"></line>
+                <line class="dimensionLine"></line>
+            </svg>
+            <div id="controls" class="dim">
+                <label for="show-dimensions">Show Dimensions</label>
+                <input id="show-dimensions" type="checkbox" checked="true">
+            </div>
+        </model-viewer>
+    </section>
+
+    <!-- Desk -->
+    <section id="desk-section">
+        <div class="product-info">
+            <div class="product-title">
+                <h2>Desk</h2>
+            </div>
+            <div class="product-description">
+                <p>Discover desks that work <br>as hard as you do.</p>
+            </div>
+        </div>
+        <model-viewer id="desk"  src="./models/desk-wood1.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./images/desk-wood.webp" shadow-intensity="1.01" shadow-softness="0.5" camera-orbit="340deg 55deg 3m" field-of-view="25.05deg">
+            <button class="view-btn" slot="hotspot-1" data-position="0.01750232899005609m 0.6818185100511243m -0.12752029912302323m" data-normal="1.9345447500736353e-7m 0.9999999999999812m -1.4431001836682452e-8m" data-orbit="362.5deg 22.86deg 3m" data-target="0 0 -1">
+                Top View
+            </button>
+            <button class="view-btn" slot="hotspot-2" data-position="-0.013960907541133622m 0.5981801131048301m 0.2941882040810173m" data-normal="-0.1736482441380419m -2.1768039353100972e-7m 0.9848077412915313m" data-orbit="363.6deg 77.44deg 3m" data-target="0 0 1">
+                Front View
+            </button>
+            <button class="view-btn" slot="hotspot-3" data-position="0.6531500062253638m 0.6637803834874141m 0.21725698313599134m" data-normal="0.9848077412915444m -1.8800954617418861e-7m 0.17364824413800262m" data-orbit="419.4deg 78.61deg 3m"  data-target="1 0 0">
+                Side View
+            </button>
+        </model-viewer>
+    </section>
+
+    <!-- Inspiration -->
+    <section id="inspiration-section">
+        <div class="product-info">
+            <div class="product-title">
+                <h2>Inspiration</h2>
+            </div>
+            <div class="product-description">
+                <p>Harmonize diverse furnishings <br>for a unified style.</p>
+            </div>
+        </div>
+
+        <model-viewer id="room" camera-controls touch-action="pan-y" src="./models/Inspiration3.glb" camera-controls poster="./images/room.webp" camera-orbit="33.01deg 76.28deg 8m" field-of-view="30deg">
+            <div id="control-light"  class="dim">
+                <label for="neutral">Sunlight </label>
+                <input id="neutral" type="checkbox" checked="true">
+            </div>
+        </model-viewer> 
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">&copy; 2023 Furnicraft. All rights reserved.</div>
+</body>
+<script src="js/script.js"></script>
+</html>
